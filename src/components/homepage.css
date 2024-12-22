@@ -5,6 +5,7 @@
   text-align: center;
   font-family: Arial, sans-serif;
   padding: 0 15px; /* Padding for mobile responsiveness */
+  margin-top: 5rem;
 }
 
 /* Filter Input */
@@ -19,7 +20,7 @@
 }
 
 .filter-input:focus {
-  border-color: #007bff;
+  border-color: #449f6f;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
@@ -40,13 +41,14 @@
 }
 
 .custom-table th {
-  background-color: #f4f4f4;
+  background-color: #449f6f;
   cursor: pointer;
   user-select: none;
+  color: white;
 }
 
 .custom-table th:hover {
-  background-color: #007bff;
+  background-color: #38875d;
   color: white;
 }
 
@@ -72,16 +74,16 @@
 .pagination-controls button {
   padding: 8px 12px;
   font-size: 14px;
-  color: #007bff;
+  color: #449f6f;
   background-color: white;
-  border: 1px solid #007bff;
+  border: 1px solid #449f6f;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .pagination-controls button:hover {
-  background-color: #007bff;
+  background-color: #449f6f;
   color: white;
 }
 
@@ -93,10 +95,10 @@
 }
 
 .pagination-controls .active {
-  background-color: #007bff;
+  background-color: #449f6f;
   color: white;
   font-weight: bold;
-  border-color: #007bff;
+  border-color: #449f6f;
 }
 
 /* Records Per Page */
@@ -121,7 +123,7 @@
 }
 
 .records-per-page select:focus {
-  border-color: #007bff;
+  border-color: #449f6f;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 

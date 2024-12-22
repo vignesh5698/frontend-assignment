@@ -66,82 +66,84 @@ function Homepage() {
   };
 
   return (
-    <div className="table-container">
-      <input
-        type="text"
-        placeholder="Search..."
-        value={filterText}
-        onChange={filterTable}
-        className="filter-input"
-      />
+    <>
+      <div></div>
+      <div className="table-container">
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <span style={{ fontSize: 24, fontWeight: "bold" }}>Amount Data</span>
+          <input
+            type="text"
+            placeholder="Search..."
+            value={filterText}
+            onChange={filterTable}
+            className="filter-input"
+            style={{ width: "10rem" }}
+          />
+        </div>
 
-      <table className="custom-table">
-        <thead>
-          <tr>
-            <th onClick={() => sortTable("sNo")}>
-              S.No
-              {sortConfig.key === "sNo" &&
-                (sortConfig.direction === "ascending" ? "↑" : "↓")}
-            </th>
-            <th onClick={() => sortTable("amountPledged")}>
-              Amount Pledged
-              {sortConfig.key === "amountPledged" &&
-                (sortConfig.direction === "ascending" ? "↑" : "↓")}
-            </th>
-            <th onClick={() => sortTable("percentageFunded")}>
-              Percentage Funded
-              {sortConfig.key === "percentageFunded" &&
-                (sortConfig.direction === "ascending" ? "↑" : "↓")}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentRecords.map((item) => (
-            <tr key={item.sNo}>
-              <td>{item.sNo}</td>
-              <td>{item.amountPledged}</td>
-              <td>{item.percentageFunded}%</td>
+        <table className="custom-table">
+          <thead>
+            <tr>
+              <th onClick={() => sortTable("sNo")}>
+                S.No
+                {sortConfig.key === "sNo" &&
+                  (sortConfig.direction === "ascending" ? "↑" : "↓")}
+              </th>
+              <th onClick={() => sortTable("amountPledged")}>
+                Amount Pledged
+                {sortConfig.key === "amountPledged" &&
+                  (sortConfig.direction === "ascending" ? "↑" : "↓")}
+              </th>
+              <th onClick={() => sortTable("percentageFunded")}>
+                Percentage Funded
+                {sortConfig.key === "percentageFunded" &&
+                  (sortConfig.direction === "ascending" ? "↑" : "↓")}
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {currentRecords.map((item) => (
+              <tr key={item.sNo}>
+                <td>{item.sNo}</td>
+                <td>{item.amountPledged}</td>
+                <td>{item.percentageFunded}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
-      <div className="pagination-controls">
-        <button
-          onClick={() => changePage(currentPage - 1)}
-          disabled={currentPage === 1}>
-          Previous
-        </button>
-        {Array.from({ length: totalPages }, (_, index) => (
+        <div className="pagination-controls">
           <button
-            key={index + 1}
-            onClick={() => changePage(index + 1)}
-            className={currentPage === index + 1 ? "active" : ""}>
-            {index + 1}
+            onClick={() => changePage(currentPage - 1)}
+            disabled={currentPage === 1}>
+            Previous
           </button>
-        ))}
-        <button
-          onClick={() => changePage(currentPage + 1)}
-          disabled={currentPage === totalPages}>
-          Next
-        </button>
-      </div>
+          <span style={{ padding: "16px 40px" }}>
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={() => changePage(currentPage + 1)}
+            disabled={currentPage === totalPages}>
+            Next
+          </button>
+        </div>
 
-      <div className="records-per-page">
-        <label htmlFor="recordsPerPage">Records per page: </label>
-        <select
-          id="recordsPerPage"
-          value={recordsPerPage}
-          onChange={(e) => {
-            setRecordsPerPage(Number(e.target.value));
-            setCurrentPage(1);
-          }}>
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="15">15</option>
-        </select>
+        <div className="records-per-page">
+          <label htmlFor="recordsPerPage">Records per page: </label>
+          <select
+            id="recordsPerPage"
+            value={recordsPerPage}
+            onChange={(e) => {
+              setRecordsPerPage(Number(e.target.value));
+              setCurrentPage(1);
+            }}>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
