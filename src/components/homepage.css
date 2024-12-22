@@ -1,0 +1,150 @@
+/* General Container Styling */
+.table-container {
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 0 15px; /* Padding for mobile responsiveness */
+}
+
+/* Filter Input */
+.filter-input {
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.filter-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Table Styling */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  overflow-x: auto; /* Ensure horizontal scrolling for small screens */
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  word-wrap: break-word; /* Prevent text overflow */
+}
+
+.custom-table th {
+  background-color: #f4f4f4;
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-table th:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.custom-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.custom-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* Allow wrapping to next line */
+  max-width: 100%; /* Full width for responsiveness */
+}
+
+.pagination-controls button {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #007bff;
+  background-color: white;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-controls button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination-controls button:disabled {
+  color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+  background-color: white;
+}
+
+.pagination-controls .active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-color: #007bff;
+}
+
+/* Records Per Page */
+.records-per-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.records-per-page label {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.records-per-page select {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.records-per-page select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .custom-table th,
+  .custom-table td {
+    padding: 8px;
+    font-size: 14px; /* Reduce font size */
+  }
+
+  .pagination-controls button {
+    font-size: 12px; /* Smaller buttons for pagination */
+    padding: 6px 8px;
+  }
+
+  .filter-input {
+    font-size: 14px; /* Adjust input size */
+    padding: 8px;
+  }
+
+  .records-per-page select {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
